@@ -12,5 +12,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "csv-loader": "^3.0.2",
+    "gh-pages": "^1.2.0"
   }
 }
