@@ -1,34 +1,122 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+html, body {
+  font-size: 16px;
 }
 
 .App {
+}
+
+.App .page.headline {
+  height: 5rem;
+  background-color: hsla(0,0%,0%,0.1);
+}
+
+.App .breadcumb {
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+.App .Searchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Footer .guide,
+.Footer .meta {
+  padding: 2rem 0;
+}
+
+.Header, .Footer .meta {
+  background-color: hsla(0,0%,0%,0.05);
+}
+
+.Footer .guide {
+  background-color: hsla(0,0%,0%,0.1);
+}
+
+.Footer .banner {
+  background-color: hsla(0,0%,0%,0.1);
+}
+
+.Footer .banner.accessability {
+  width: 5rem;
+  height: 2rem;
+}
+
+.Footer .banner.gov {
+  width: 3rem;
+  height: 2rem;
+}
+
+.Header {
+  padding-top: 1rem;
+}
+
+.Header .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header .head .logo {
+  width: 10rem;
+  height: 4rem;
+  background-color: hsla(0,0%,0%,0.1);
+  display: block;
+}
+
+.Header .head .options {
+  display: flex;
+  align-items: center;
+}
+
+.Header .head .options [data-option='font-size'],
+.Header .head .options [data-option='lang'] {
+  height: 2rem!important;
+  margin-right: 1rem;
+  background: none;
+}
+
+.Header .head .options [data-option='font-size'] .button {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.Header .head .options [data-option='lang'] option {
+  padding: 0.5rem 1rem;
+  color: rgba(0,0,0,.6)!important;
+}
+
+.Header .head .options .actions {
+  margin-right: 1rem;
+}
+
+.Header .head .options .actions .icon {
+  font-size: 1.25rem;
+  opacity: 0.5;
+}
+
+.Header .head .options .actions .icon~.icon {
+  margin-left: 0.5rem;
+}
+
+.Header .Navbar {
+  margin-top: 1rem;
+}
+
+.Home .hero {
+  background-color: hsla(0,0%,0%,0.1);
   text-align: center;
+  padding: 2rem 0;
+  height: 20rem;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.Home .hero .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
