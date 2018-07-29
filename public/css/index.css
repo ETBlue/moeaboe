@@ -6,8 +6,8 @@ html, body {
 }
 
 .App .page.headline {
-  height: 5rem;
   background-color: hsla(0,0%,0%,0.1);
+  padding: 2rem 0;
 }
 
 .App .breadcumb {
@@ -24,6 +24,29 @@ html, body {
 .Footer .guide,
 .Footer .meta {
   padding: 2rem 0;
+}
+
+.Footer .meta .site.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer .meta .site.info .banners,
+.Footer .meta .site.info .text {
+  margin-right: 2rem;
+}
+
+.Footer .meta .site.info .banners .banner {
+  margin-bottom: 1rem;
+}
+
+.Footer .meta .site.info .text .ui.list~.ui.list,
+.Footer .meta .name.card .ui.list {
+  margin-top: 2rem;
+}
+
+.Footer .meta .name.card {
+  margin-left: 2rem;
 }
 
 .Header, .Footer .meta {
@@ -120,3 +143,6 @@ html, body {
   align-items: center;
 }
 
+.Category .result {
+  padding: 2rem 0;
+}

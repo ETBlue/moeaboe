@@ -20,6 +20,13 @@ export default ({categoryObj, categoryIdArray}) => {
           <Searchbar />
         </div>
       </section>
+      <section className='policy'>
+        <div className='ui container'>
+          <div className='ui basic padded segment'>
+            區塊內容
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

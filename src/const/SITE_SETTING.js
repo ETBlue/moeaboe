@@ -12,6 +12,17 @@ export default {
     zh: '{slogan}',
     en: ''
   },
+  address: {
+    zh: '10492 臺北市中山區復興北路2號13樓',
+    en: ''
+  },
+  tel: [
+    '(02)2772-1370'
+  ],
+  fax: [
+    '(02)2776-9417',
+    '(02)2711-5891'
+  ],
   links: [
     {
       title: 'Source code',
