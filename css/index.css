@@ -1,0 +1,148 @@
+html, body {
+  font-size: 16px;
+}
+
+.App {
+}
+
+.App .page.headline {
+  background-color: hsla(0,0%,0%,0.1);
+  padding: 2rem 0;
+}
+
+.App .breadcumb {
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+.App .Searchbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Footer .guide,
+.Footer .meta {
+  padding: 2rem 0;
+}
+
+.Footer .meta .site.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer .meta .site.info .banners,
+.Footer .meta .site.info .text {
+  margin-right: 2rem;
+}
+
+.Footer .meta .site.info .banners .banner {
+  margin-bottom: 1rem;
+}
+
+.Footer .meta .site.info .text .ui.list~.ui.list,
+.Footer .meta .name.card .ui.list {
+  margin-top: 2rem;
+}
+
+.Footer .meta .name.card {
+  margin-left: 2rem;
+}
+
+.Header, .Footer .meta {
+  background-color: hsla(0,0%,0%,0.05);
+}
+
+.Footer .guide {
+  background-color: hsla(0,0%,0%,0.1);
+}
+
+.Footer .banner {
+  background-color: hsla(0,0%,0%,0.1);
+}
+
+.Footer .banner.accessability {
+  width: 5rem;
+  height: 2rem;
+}
+
+.Footer .banner.gov {
+  width: 3rem;
+  height: 2rem;
+}
+
+.Header {
+  padding-top: 1rem;
+}
+
+.Header .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Header .head .logo {
+  width: 10rem;
+  height: 4rem;
+  background-color: hsla(0,0%,0%,0.1);
+  display: block;
+}
+
+.Header .head .options {
+  display: flex;
+  align-items: center;
+}
+
+.Header .head .options [data-option='font-size'],
+.Header .head .options [data-option='lang'] {
+  height: 2rem!important;
+  margin-right: 1rem;
+  background: none;
+}
+
+.Header .head .options [data-option='font-size'] .button {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.Header .head .options [data-option='lang'] option {
+  padding: 0.5rem 1rem;
+  color: rgba(0,0,0,.6)!important;
+}
+
+.Header .head .options .actions {
+  margin-right: 1rem;
+}
+
+.Header .head .options .actions .icon {
+  font-size: 1.25rem;
+  opacity: 0.5;
+}
+
+.Header .head .options .actions .icon~.icon {
+  margin-left: 0.5rem;
+}
+
+.Header .Navbar {
+  margin-top: 1rem;
+}
+
+.Home .hero {
+  background-color: hsla(0,0%,0%,0.1);
+  text-align: center;
+  padding: 2rem 0;
+  height: 20rem;
+}
+
+.Home .hero .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Category .result {
+  padding: 2rem 0;
+}
