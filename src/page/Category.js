@@ -15,26 +15,48 @@ export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTre
   let currentDepth = 0
   let currentPath = []
 
+  const currentDepth2FolderItemStyle = {
+    0: '',
+    1: 'level1',
+    2: 'level2',
+    3: 'level3'
+  }
+
   const renderList = ({tagObj, tagTreeObj}) => {
     const listJSX = Object.keys(tagTreeObj).map((tagId, tagIdIndex) => {
+      currentDepth += 1
       currentPath.push(tagId)
       const tagObjId = currentPath.join('>')
 
       let subListJSX
+      let itemStyle = ''
+      let itemDropdown = null
+
       if (Object.keys(tagTreeObj[tagId]).length > 0) {
+        itemStyle += currentDepth2FolderItemStyle[currentDepth]
+        itemDropdown = (
+          <i className='caret down icon' />
+        )
         subListJSX = renderList({tagObj, tagTreeObj: tagTreeObj[tagId]})
       }
 
       currentPath.pop()
+      currentDepth -= 1
+
       return (
-        <div className='item' key={`${tagId}-${tagIdIndex}`}>
-          {tagObj[tagObjId].title}
+        <div className={`${itemStyle} item`} key={`${tagId}-${tagIdIndex}`}>
+          <Link to={`/${categoryId}/${tagId}`}>
+            {itemDropdown}
+            {tagObj[tagObjId].title}
+          </Link>
           {subListJSX}
         </div>
       )
     })
+
+    const menuStyle = currentDepth === 0 ? 'ui vertical' : ''
     return (
-      <div className='ui relaxed list'>
+      <div className={`${menuStyle} menu`}>
         {listJSX}
       </div>
     )
@@ -63,10 +85,10 @@ export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTre
           {tagText}
         </div>
       </section>
-      <section className='result'>
+      <section id='main'>
         <div className='ui container'>
           <div className='ui two column stackable grid'>
-            <div className='six wide column'>
+            <div id='sidebar' className='six wide column'>
               {sidebarJSX}
             </div>
             <div className='ten wide column'>
