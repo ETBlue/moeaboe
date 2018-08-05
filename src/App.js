@@ -14,8 +14,13 @@ import Footer from './comp/Footer'
 import Home from './page/Home'
 import Category from './page/Category'
 
-import categoryCsvArray from './data/BOE - data - category.csv'
 import tagCsvArray from './data/BOE - data - tag.csv'
+import categoryCsvArray from './data/BOE - data - category.csv'
+import contentCsvArray from './data/BOE - data - content.csv'
+import authorCsvArray from './data/BOE - data - author.csv'
+import energyCsvArray from './data/BOE - data - energy.csv'
+import needCsvArray from './data/BOE - data - need.csv'
+import taCsvArray from './data/BOE - data - ta.csv'
 
 import parseData from './func/parseData'
 
@@ -29,7 +34,7 @@ class App extends Component {
   }
 
   async getData () {
-    this.setState(parseData({tagCsvArray, categoryCsvArray}))
+    this.setState(parseData({tagCsvArray, categoryCsvArray, contentCsvArray, authorCsvArray}))
   }
 
   componentDidMount () {
@@ -44,9 +49,9 @@ class App extends Component {
           <Switch>
             <Route exact path='/' render={() => Home({...this.state})} />
             <Route exact path='/search' render={() => <p>search</p>} />
-            <Route path='/:categoryId/:tagId?' render={({match}) => Category({
+            <Route path='/:categoryId' render={({match, location}) => Category({
               categoryId: match.params.categoryId,
-              tagId: match.params.tagId,
+              tagId: location.pathname.replace(`/${match.params.categoryId}`, '').replace(/^\//, ''),
               ...this.state
             })} />
           </Switch>

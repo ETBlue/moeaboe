@@ -1,5 +1,3 @@
-import date2range from './date2range'
-
 export default ({tagCsvArray, categoryCsvArray}) => {
   if (!tagCsvArray || tagCsvArray.length === 0 || typeof tagCsvArray !== 'object') return {}
 
@@ -24,8 +22,6 @@ export default ({tagCsvArray, categoryCsvArray}) => {
   })
 
   const titles = tagCsvArray[0]
-  const categoryIdIndex = titles.indexOf('category_id')
-
   tagCsvArray.forEach((lineArray, lineArrayIndex) => {
     if (lineArrayIndex === 0) return
 
@@ -55,7 +51,7 @@ export default ({tagCsvArray, categoryCsvArray}) => {
       tagTreeTodoArrayObj[categoryId].forEach((todoItem, todoItemIndex) => {
         if (tagId === todoItem.parent_id) {
           currentPath.push(todoItem.id)
-          tagObj[categoryId][currentPath.join('>')] = todoItem
+          tagObj[categoryId][currentPath.join('/')] = todoItem
           currentPath.pop()
 
           tagTreeObj[tagId][todoItem.id] = {}

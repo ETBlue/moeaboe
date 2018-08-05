@@ -1,142 +1,177 @@
-id,title,parent_id,category_id,layout_id,content,tab_filter,text_filter,dropdown_filter_1,dropdown_filter_2,dropdown_filter_3,dropdown_sorter
-head,首長介紹,,about,menu_content,,,,,,,
-history,沿革,,about,menu_content,,,,,,,
-mission,任務職掌,,about,menu_content,,,,,,,
-organization,組織架構,,about,menu_content,,,,,,,
-report,施政報告,,about,,,,,,,,
-budget_and_final,年度預決算書,report,about,,,,,,,,
-accounting,會計報告,report,about,,,,,,,,
-plan,施政計畫,report,about,,,,,,,,
-business,業務報告,report,about,,,,,,,,
-research,研究報告,report,about,,,,,,,,
-abroad,出國報告,report,about,,,,,,,,
-docs,施政文件,,about,,,,,,,,
-pcc,公共工程委員會招標相關文件及表格,docs,about,,,,,,,,
-subsidy,支付或接受之補助,docs,about,,,,,,,,
-中央政府前瞻基礎建設計畫第1期特別預算,中央政府前瞻基礎建設計畫第1期特別預算,subsidy,about,,,,,,,,
-中央政府莫拉克颱風災後重建特別預算,中央政府莫拉克颱風災後重建特別預算,subsidy,about,,,,,,,,
-moeaboe,經濟部能源局,subsidy,about,,,,,,,,
-石油基金,石油基金,subsidy,about,,,,,,,,
-能源研究發展基金,能源研究發展基金,subsidy,about,,,,,,,,
-再生能源發展基金,再生能源發展基金,subsidy,about,,,,,,,,
-各基金出國計畫執行情形,各基金出國計畫執行情形,docs,about,,,,,,,,
-行政指導文書,行政指導文書,docs,about,,,,,,,,
-內部控制聲明書,內部控制聲明書,docs,about,,,,,,,,
-個資檔案資訊,個資檔案資訊,docs,about,,,,,,,,
-政策宣導明細,政策宣導明細,docs,about,,,,,,,,
-location,來去能源局,,about,menu_content,,,,,,,
-vi,能源局標誌,,about,menu_content,,,,,,,
-announcement,公告,,news,,,,,,,,
-law,最新法規公布,announcement,news,,,,,,,,
-admin,行政公告,announcement,news,,,,,,,,
-data,最新開放資料集,announcement,news,,,,,,,,
-report,文件及報告,announcement,news,,,,,,,,
-news,新聞,,news,,,,,,,,
-hot,焦點新聞,news,news,,,,,,,,
-fact_check,真相說明,news,news,,,,,,,,
-story,能源報導,news,news,,,,,,,,
-bun,熱門懶人包,news,news,,,,,,,,
-infographic,熱門能源資訊圖表,news,news,,,,,,,,
-activity,活動,,news,,,,,,,,
-training,教育訓練,activity,news,,,,,,,,
-promotion,推廣活動,activity,news,,,,,,,,
-letter,來函照登,activity,news,,,,,,,,
-recruitment,招商,activity,news,,,,,,,,
-civic_participation,公民參與,,news,,,,,,,,
-join,眾開講,civic_participation,news,,,,,,,,
-public_hearing,公聽會,civic_participation,news,,,,,,,,
-orientation,說明會,civic_participation,news,,,,,,,,
-hearing,聽證會,civic_participation,news,,,,,,,,
-committee,委員會,civic_participation,news,,,,,,,,
-validation,審定會,civic_participation,news,,,,,,,,
-other,其他會議,civic_participation,news,,,,,,,,
-hiring,徵才,,news,,,,,,,,
-plan,重大政策,,policy,,,,,,,,
-energy,總體能源政策,plan,policy,,,,,,,,
-oil_gas,石油與天然氣,plan,policy,,,,,,,,
-electricity,電力,plan,policy,,,,,,,,
-renewable,再生能源,plan,policy,,,,,,,,
-saving,節約能源,plan,policy,,,,,,,,
-government,地方能源治理,plan,policy,,,,,,,,
-international,國際事務,plan,policy,,,,,,,,
-law,本局主管法規,,policy,,,,,,,,
-law,法律,law,policy,,,,,,,,
-order,法規命令,law,policy,,,,,,,,
-rule,行政規則,law,policy,,,,,,,,
-explaination,行政函釋,law,policy,,,,,,,,
-trail,草案預告,law,policy,,,,,,,,
-corporation,企業,,service,,,石油及天然氣;電力;再生能源;節約能源;總體能源,,,,,
-apply,申辦業務,corporation,service,,,,,,,,
-report,申報資料,corporation,service,,,,,,,,
-counsel,輔導與技術服務,corporation,service,,,,,,,,
-recruitment,招商資訊,corporation,service,,,,,,,,
-subsidy,申請補助,corporation,service,,,,,,,,
-reward,申請獎勵,corporation,service,,,,,,,,
-feedback,意見信箱,corporation,service,,,,,,,,
-local_gov,地方政府,,service,,,石油及天然氣;電力;再生能源;節約能源;總體能源,,,,,
-law,法規資訊,local_gov,service,,,,,,,,
-counsel,輔導與技術服務,local_gov,service,,,,,,,,
-subsidy,申請補助,local_gov,service,,,,,,,,
-reward,申請獎勵,local_gov,service,,,,,,,,
-feedback,意見信箱,local_gov,service,,,,,,,,
-school,學校,,service,,,石油及天然氣;電力;再生能源;節約能源;總體能源,,,,,
-apply,申辦業務,school,service,,,,,,,,
-report,申報資料,school,service,,,,,,,,
-counsel,輔導與技術服務,school,service,,,,,,,,
-project,學界能源科技專案,school,service,,,,,,,,
-subsidy,申請補助,school,service,,,,,,,,
-reward,申請獎勵,school,service,,,,,,,,
-feedback,意見信箱,school,service,,,,,,,,
-specialist,專業技術人員,,service,,,石油及天然氣;電力;再生能源;節約能源;總體能源,,,,,
-apply,申辦業務,specialist,service,,,,,,,,
-report,申報資料,specialist,service,,,,,,,,
-counsel,輔導與技術服務,specialist,service,,,,,,,,
-training,教育訓練,specialist,service,,,,,,,,
-feedback,意見信箱,specialist,service,,,,,,,,
-citizen,民眾,,service,,,石油及天然氣;電力;再生能源;節約能源;總體能源,,,,,
-apply,申辦業務,citizen,service,,,,,,,,
-subsidy,申請獎勵,citizen,service,,,,,,,,
-counsel,輔導與技術服務,citizen,service,,,,,,,,
-feedback,意見信箱,citizen,service,,,,,,,,
-statistic,統計資料,,info,,,,,,,,
-manual,能源統計手冊,statistic,info,,,,,,,,
-seasonal,能源季報,statistic,info,,,,,,,,
-monthly,能源月報,statistic,info,,,,,,,,
-query,能源統計資料查詢系統,statistic,info,,,,,,,,
-infographic,熱門能源資訊圖表,statistic,info,,,,,,,,
-taipower,台電資訊揭露(超連結),statistic,info,,,,,,,,
-county,縣市能源資訊,statistic,info,,,,,,,,
-promotion,宣導推廣,,info,,,,,,,,
-faq,常見QA,promotion,info,,,,,,,,
-knowledge,能源知識,,info,,,,,,,,
-term,雙語詞彙-能源名詞,knowledge,info,,,,,,,,
-energy,總體能源政策,knowledge,info,,,,,,,,
-oil_gas,石油與天然氣,knowledge,info,,,,,,,,
-electricity,電力,knowledge,info,,,,,,,,
-renewable,再生能源,knowledge,info,,,,,,,,
-saving,節約能源,knowledge,info,,,,,,,,
-co2,溫室氣體,knowledge,info,,,,,,,,
-blog,能源BLOG,,info,,,,,,,,
-story,能源報導,blog,info,,,,,,,,
-infographic,能源資訊圖表,blog,info,,,,,,,,
-bun,能源懶人包,blog,info,,,,,,,,
-award,榮譽榜,,info,,,,,,,,
-106年度國民中小學推動能源教育標竿學校選拔須知,106年度國民中小學推動能源教育標竿學校選拔須知,award,info,,,,,,,,
-開啟106年度國民中小學推動能源教育標竿學校選拔須知.odt檔開啟106年度國民中小學推動能源教育標竿學校選拔須知.pdf檔開啟106年度國民中小學推動能源教育標竿學校選拔須知.doc檔,開啟106年度國民中小學推動能源教育標竿學校選拔須知.odt檔開啟106年度國民中小學推動能源教育標竿學校選拔須知.pdf檔開啟106年度國民中小學推動能源教育標竿學校選拔須知.doc檔,award,info,,,,,,,,
-107年經濟部節能標竿獎表揚活動選拔須知,107年經濟部節能標竿獎表揚活動選拔須知,award,info,,,,,,,,
-「家用桶裝瓦斯差價補助」辦理績優獎及辛勤獎,「家用桶裝瓦斯差價補助」辦理績優獎及辛勤獎,award,info,,,,,,,,
-推動能源教育績優獎,推動能源教育績優獎,award,info,,,,,,,,
-優良太陽光電系統-光鐸獎,優良太陽光電系統-光鐸獎,award,info,,,,,,,,
-金能獎-優良太陽光電產品,金能獎-優良太陽光電產品,award,info,,,,,,,,
-sns,web 2.0影音社群,,info,,,,,,,,
-hot,熱門影音,sns,info,,,,,,,,
-youtube,youtube經濟部、能源局、其他計畫,sns,info,,,,,,,,
-facebook,fb經濟部、能源局、其他計畫,sns,info,,,,,,,,
-filcker,flicker,sns,info,,,,,,,,
-twitter,twitter,sns,info,,,,,,,,
-pinterest,pinterest,sns,info,,,,,,,,
-ivoting,i-voting,sns,info,,,,,,,,
-line,line經濟部,sns,info,,,,,,,,
-other,其他網站平台,sns,info,,,,,,,,
-gender,性別主流化專區,,info,,,,,,,,
-emergency,緊急應變聯絡中心,,info,,,,,,,,
+no,id,title,parent_id,category_id,layout_id,content_id,icon
+1,head,首長介紹,,about,,,
+2,history,沿革,,about,,,
+3,mission,任務職掌,,about,,,
+4,organization,組織架構,,about,,,
+5,gov_info,政府資訊公開,,about,,,
+6,budget_and_final,年度預決算書,gov_info,about,,,dollar sign
+7,accounting,會計報告,gov_info,about,,,dollar sign
+8,plan,施政計畫,gov_info,about,,,
+9,business,業務報告,gov_info,about,,,
+10,research,研究報告,gov_info,about,,,
+11,abroad,出國報告,gov_info,about,,,
+13,pcc,公共工程委員會招標相關文件及表格,gov_info,about,,,
+14,subsidy,支付或接受之補助,gov_info,about,,,dollar sign
+15,中央政府前瞻基礎建設計畫第1期特別預算,中央政府前瞻基礎建設計畫第1期特別預算,subsidy,about,,,dollar sign
+16,中央政府莫拉克颱風災後重建特別預算,中央政府莫拉克颱風災後重建特別預算,subsidy,about,,,dollar sign
+17,moeaboe,經濟部能源局,subsidy,about,,,dollar sign
+18,石油基金,石油基金,subsidy,about,,,dollar sign
+19,能源研究發展基金,能源研究發展基金,subsidy,about,,,dollar sign
+20,再生能源發展基金,再生能源發展基金,subsidy,about,,,dollar sign
+21,各基金出國計畫執行情形,各基金出國計畫執行情形,gov_info,about,,,
+22,行政指導文書,行政指導文書,gov_info,about,,,
+23,內部控制聲明書,內部控制聲明書,gov_info,about,,,
+24,個資檔案資訊,個資檔案資訊,gov_info,about,,,
+25,政策宣導明細,政策宣導明細,gov_info,about,,,
+26,location,來去能源局,,about,,,
+27,vi,能源局標誌,,about,,,
+28,announcement,公告,,news,,,bullhorn
+29,law,最新法規公布,announcement,news,,,bullhorn
+30,admin,行政公告,announcement,news,,,bullhorn
+31,data,最新開放資料集,announcement,news,,,bullhorn
+32,report,文件及報告,announcement,news,,,bullhorn
+33,news,新聞,,news,,,newspaper
+34,hot,焦點新聞,news,news,,,newspaper
+35,fact_check,真相說明,news,news,,,lightbulb
+36,story,能源報導,news,news,,,newspaper
+37,bun,熱門懶人包,news,news,,,newspaper
+38,infographic,熱門能源資訊圖表,news,news,,,chart area
+39,activity,活動,,news,,,newspaper
+40,training,教育訓練,activity,news,,,newspaper
+41,promotion,推廣活動,activity,news,,,newspaper
+42,letter,來函照登,activity,news,,,newspaper
+43,recruitment,招商,activity,news,,,newspaper
+44,civic_participation,公民參與,,news,,,newspaper
+45,join,眾開講,civic_participation,news,,,newspaper
+46,public_hearing,公聽會,civic_participation,news,,,newspaper
+47,orientation,說明會,civic_participation,news,,,newspaper
+48,hearing,聽證會,civic_participation,news,,,newspaper
+49,committee,委員會,civic_participation,news,,,newspaper
+50,validation,審定會,civic_participation,news,,,newspaper
+51,other,其他公開性會議,civic_participation,news,,,newspaper
+52,hiring,徵才,,news,,,newspaper
+53,plan,重大政策,,policy,,,
+54,energy,總體能源政策,plan,policy,,,
+55,oil_gas,石油與天然氣,plan,policy,,,
+56,electricity,電力,plan,policy,,,
+57,renewable,再生能源,plan,policy,,,
+58,saving,節約能源,plan,policy,,,
+59,legislation,法律命令,plan,policy,,,
+60,international,國際事務,plan,policy,,,
+61,law,本局主管法規,,policy,,,balance scale
+62,news,最新訊息,law,policy,,,newspaper
+63,law,法律,news,policy,,,newspaper
+64,order,法規命令,news,policy,,,newspaper
+65,rule,行政規則,news,policy,,,newspaper
+66,draft,草案預告,news,policy,,,newspaper
+67,meeting,法規相關公開會議,news,policy,,,newspaper
+68,system,法規體系,law,policy,,,balance scale
+69,misc,綜合類,system,policy,,,balance scale
+70,oil,石油,system,policy,,,balance scale
+71,gaseous,氣體燃料,system,policy,,,balance scale
+72,gas,天然氣,system,policy,,,balance scale
+73,electricity,電力,system,policy,,,balance scale
+74,renewable,再生能源,system,policy,,,balance scale
+75,saving,節約能源,system,policy,,,balance scale
+76,search,法規檢索,law,policy,,,balance scale
+77,english,英譯法規,law,policy,,,balance scale
+78,trail,草案預告,law,policy,,,balance scale
+79,latest,最新法規草案,trail,policy,,,balance scale
+80,archive,歷史法規草案,trail,policy,,,balance scale
+67,corporation,企業,,service,,,briefcase
+68,apply,申辦業務,corporation,service,,,briefcase
+69,report,申報資料,corporation,service,,,briefcase
+70,counsel,輔導與技術服務,corporation,service,,,briefcase
+71,recruitment,招商資訊,corporation,service,,,briefcase
+72,subsidy,申請補助,corporation,service,,,briefcase
+73,reward,申請獎勵,corporation,service,,,briefcase
+74,feedback,意見信箱,corporation,service,,,briefcase
+75,local_gov,地方政府,,service,,,briefcase
+76,law,法規資訊,local_gov,service,,,briefcase
+77,counsel,輔導與技術服務,local_gov,service,,,briefcase
+78,subsidy,申請補助,local_gov,service,,,briefcase
+79,reward,申請獎勵,local_gov,service,,,briefcase
+80,feedback,意見信箱,local_gov,service,,,briefcase
+81,school,學校,,service,,,briefcase
+82,apply,申辦業務,school,service,,,briefcase
+83,report,申報資料,school,service,,,briefcase
+84,counsel,輔導與技術服務,school,service,,,briefcase
+85,project,學界能源科技專案,school,service,,,briefcase
+86,subsidy,申請補助,school,service,,,briefcase
+87,reward,申請獎勵,school,service,,,briefcase
+88,feedback,意見信箱,school,service,,,briefcase
+89,specialist,專業技術人員,,service,,,briefcase
+90,apply,申辦業務,specialist,service,,,briefcase
+91,report,申報資料,specialist,service,,,briefcase
+92,counsel,輔導與技術服務,specialist,service,,,briefcase
+93,training,教育訓練,specialist,service,,,briefcase
+94,feedback,意見信箱,specialist,service,,,briefcase
+95,citizen,民眾,,service,,,briefcase
+96,apply,申辦業務,citizen,service,,,briefcase
+97,subsidy,申請獎勵,citizen,service,,,briefcase
+98,counsel,輔導與技術服務,citizen,service,,,briefcase
+99,feedback,意見信箱,citizen,service,,,briefcase
+100,statistic,統計資料,,info,,,chart bar
+101,manual,能源統計手冊,statistic,info,,,chart bar
+102,seasonal,能源季報,statistic,info,,statistic_seasonal,chart bar
+103,monthly,能源月報,statistic,info,,statistic_monthly,chart bar
+104,query,能源統計資料查詢系統,statistic,info,,,chart bar
+105,infographic,熱門能源資訊圖表,statistic,info,,,chart bar
+106,taipower,台電資訊揭露(超連結),statistic,info,,,chart bar
+107,county,縣市能源資訊,statistic,info,,,chart bar
+108,promotion,宣導推廣,,info,,,bullhorn
+109,faq,常見QA,promotion,info,,,question
+110,knowledge,能源知識,,info,,,book
+111,term,雙語詞彙-能源名詞,knowledge,info,,,book
+112,energy,總體能源政策,knowledge,info,,,book
+113,oil_gas,石油與天然氣,knowledge,info,,,book
+114,electricity,電力,knowledge,info,,,book
+115,renewable,再生能源,knowledge,info,,,book
+116,saving,節約能源,knowledge,info,,,book
+117,co2,溫室氣體,knowledge,info,,,book
+118,blog,能源BLOG,,info,,,newspaper
+119,story,能源報導,blog,info,,,newspaper
+120,infographic,能源資訊圖表,blog,info,,,chart area
+121,bun,能源懶人包,blog,info,,,chart area
+122,award,榮譽榜,,info,,,
+123,106年度國民中小學推動能源教育標竿學校選拔須知,106年度國民中小學推動能源教育標竿學校選拔須知,award,info,,,
+124,106年度國民中小學推動能源教育標竿學校選拔須知,106年度國民中小學推動能源教育標竿學校選拔須知,award,info,,,
+125,107年經濟部節能標竿獎表揚活動選拔須知,107年經濟部節能標竿獎表揚活動選拔須知,award,info,,,
+126,「家用桶裝瓦斯差價補助」辦理績優獎及辛勤獎,「家用桶裝瓦斯差價補助」辦理績優獎及辛勤獎,award,info,,,
+127,推動能源教育績優獎,推動能源教育績優獎,award,info,,,
+128,優良太陽光電系統-光鐸獎,優良太陽光電系統-光鐸獎,award,info,,,
+129,金能獎-優良太陽光電產品,金能獎-優良太陽光電產品,award,info,,,
+130,sns,web 2.0影音社群,,info,,,
+131,hot,熱門影音,sns,info,,,
+132,youtube,youtube經濟部、能源局、其他計畫,sns,info,,,
+133,facebook,fb經濟部、能源局、其他計畫,sns,info,,,
+134,filcker,flicker,sns,info,,,
+135,twitter,twitter,sns,info,,,
+136,pinterest,pinterest,sns,info,,,
+137,ivoting,i-voting,sns,info,,,
+138,line,line經濟部,sns,info,,,
+139,other,其他網站平台,sns,info,,,
+140,gender,性別主流化專區,,info,,,
+141,emergency,緊急應變聯絡中心,,info,,,
+142,efficiency,能源效率與節能,,transition,,,
+143,民生部門節能,民生部門節能,efficiency,transition,,,
+144,工業部門能效提升,工業部門能效提升,efficiency,transition,,,
+145,建築部門節能,建築部門節能,efficiency,transition,,,
+146,運輸部門節能,運輸部門節能,efficiency,transition,,,
+147,節能目標發展路徑,節能目標發展路徑,efficiency,transition,,,
+148,renewable,再生能源,,transition,,,
+149,風光雙箭,風光雙箭,renewable,transition,,,
+150,其他綠色低碳能源,其他綠色低碳能源,renewable,transition,,,
+151,綠能友善的發展環境,綠能友善的發展環境,renewable,transition,,,
+152,electricity,電力系統,,transition,,,
+153,穩定的電力供應,穩定的電力供應,electricity,transition,,,
+154,穩定的天然氣供應,穩定的天然氣供應,electricity,transition,,,
+155,電業市場的革新,電業市場的革新,electricity,transition,,,
+156,智慧化的基礎建設,智慧化的基礎建設,electricity,transition,,,
+157,industry,綠能產業與創新,,transition,,,
+158,打造智慧綠能科學城,打造智慧綠能科學城,industry,transition,,,
+159,participative,參與能源轉型,,transition,,,
+160,localization,在地的能源轉型,participative,transition,,,
+161,env,公民參與的環境,participative,transition,,,
+162,建構參與式能源治理環境,建構參與式能源治理環境,env,transition,,,
+163,公民參與電廠建置,公民參與電廠建置,env,transition,,,

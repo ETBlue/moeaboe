@@ -1,0 +1,27 @@
+id,title,parent_id
+discount,找優惠,
+subsidy,獎勵與補助,discount
+counsel,輔導與推動,discount
+impeach,檢舉,
+boe,檢舉能源局,impeach
+corporation,檢舉地下廠商,impeach
+corruption,廉政檢舉,impeach
+stealing,檢舉竊電,impeach
+gossip,找八卦,
+news,新聞與回應,gossip
+myth,迷思,gossip
+hot,熱門點閱（現在夯什麼）,gossip
+fact,真相說明,gossip
+data,找資料,
+online,線上,data
+offline,實體,data
+report,報告,online
+statistic,能源統計,online
+price,油價 / 電費費率查詢,online
+research,車輛耗能研究,online
+edu,找教材,
+published,出版品,edu
+video,影音,edu
+event,知識教育實地推廣活動,edu
+infographic,懶人包(資訊圖像化),edu
+local,我的縣市,

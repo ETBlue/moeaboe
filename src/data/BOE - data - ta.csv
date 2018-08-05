@@ -1,0 +1,13 @@
+id,title,parent_id
+local_gov,地方政府,
+corporation,企業,
+申辦業務廠商,申辦業務廠商,corporation
+能源產業廠商,能源產業廠商,corporation
+school,學校,
+specialist,專業技術人員,
+citizen,一般民眾,
+偏遠及離島地區,偏遠及離島地區,citizen
+原住民族,原住民族,citizen
+社區,社區,citizen
+ngo,NGO,
+media,媒體,
