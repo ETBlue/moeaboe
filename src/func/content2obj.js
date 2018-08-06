@@ -17,11 +17,11 @@ export default ({contentCsvArray, tagObj, categoryIdArray}) => {
   })
 
   const titles = contentCsvArray[0]
-  const contentIdIndex = titles.indexOf('id')
+  const contentEndpointIdIndex = titles.indexOf('endpoint_id')
   contentCsvArray.forEach((lineArray, lineArrayIndex) => {
     if (lineArrayIndex === 0 ||
-      !lineArray[contentIdIndex] ||
-      lineArray[contentIdIndex].length === 0
+      !lineArray[contentEndpointIdIndex] ||
+      lineArray[contentEndpointIdIndex].length === 0
     ) {
       return
     }
@@ -31,18 +31,18 @@ export default ({contentCsvArray, tagObj, categoryIdArray}) => {
       contentObjItem[title] = lineArray[titleIndex]
     })
 
-    const contentObjId = contentObjItem.parent_id.length === 0 ? contentObjItem.id : `${contentObjItem.parent_id}/${contentObjItem.id}`
-    contentObj[contentObjItem.category_id][contentObjId] = contentObjItem
+    let contentObjId = contentObjItem.id.length > 0 ? contentObjItem.id : contentObjItem.endpoint_id
+    contentObj[contentObjItem.category_id][`${contentObjItem.tag_id}/${contentObjId}`] = contentObjItem
 
     const pushContentToTags = ({tagContentObj, contentObjItem, residualTagId}) => {
-      tagContentObj[contentObjItem.category_id][residualTagId].push(contentObjId)
+      tagContentObj[contentObjItem.category_id][residualTagId].push(`${contentObjItem.tag_id}/${contentObjId}`)
       if (residualTagId.includes('/')) {
         const newResidualTagId = residualTagId.slice(0, residualTagId.lastIndexOf('/'))
         pushContentToTags({tagContentObj, contentObjItem, residualTagId: newResidualTagId})
       }
     }
     pushContentToTags({tagContentObj, contentObjItem, residualTagId: contentObjItem.tag_id})
-    tagContentObj[contentObjItem.category_id].all.push(contentObjId)
+    tagContentObj[contentObjItem.category_id].all.push(`${contentObjItem.tag_id}/${contentObjId}`)
   })
 
   return {contentObj, tagContentObj}

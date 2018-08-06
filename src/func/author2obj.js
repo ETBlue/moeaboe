@@ -3,12 +3,12 @@ export default ({authorCsvArray}) => {
 
   let authorObj = {}
   const titles = authorCsvArray[0]
-  const authorIdIndex = titles.indexOf('id')
+  const authorEndpointIdIndex = titles.indexOf('endpoint_id')
 
   authorCsvArray.forEach((lineArray, lineArrayIndex) => {
     if (lineArrayIndex === 0 ||
-      !lineArray[authorIdIndex] ||
-      lineArray[authorIdIndex].length === 0
+      !lineArray[authorEndpointIdIndex] ||
+      lineArray[authorEndpointIdIndex].length === 0
     ) {
       return
     }
@@ -18,7 +18,7 @@ export default ({authorCsvArray}) => {
       authorObjItem[title] = lineArray[titleIndex]
     })
 
-    const authorObjId = authorObjItem.parent_id.length === 0 ? authorObjItem.id : `${authorObjItem.parent_id}/${authorObjItem.id}`
+    const authorObjId = authorObjItem.id.length > 0 ? authorObjItem.id : authorObjItem.endpoint_id
     authorObj[authorObjId] = authorObjItem
   })
 

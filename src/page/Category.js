@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-  Link
+  Link,
+  NavLink
 } from 'react-router-dom'
 
 import Header from '../comp/Header'
@@ -14,7 +15,7 @@ export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTre
   let categoryTextJSX = null
   if (categoryObj && categoryObj[categoryId]) {
     categoryTextJSX = (
-      <Link to={`/${categoryId}`}>
+      <Link key={categoryId} to={`/${categoryId}`}>
         {categoryObj[categoryId].title}
       </Link>
     )
@@ -27,7 +28,7 @@ export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTre
     if (!tagId || tagId.length === 0 || !tagObj[categoryId][tagId]) return
 
     const tagTextJSX = (
-      <Link to={`/${categoryId}/${tagId}`}>
+      <Link key={`${categoryId}/${tagId}`} to={`/${categoryId}/${tagId}`}>
         {tagObj[categoryId][tagId].title}
       </Link>
     )
@@ -39,10 +40,51 @@ export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTre
       renderBreadcumbTagText({tagId: residualTagId, tagObj})
     }
   }
+
+  if (contentObj[categoryId][tagId]) {
+    renderBreadcumbTagText({tagId: contentObj[categoryId][tagId].tag_id, tagObj})
+    const contentTextJSX = (
+      <Link key={`${categoryId}/${tagId}`} to={`/${categoryId}/${tagId}`}>
+        {contentObj[categoryId][tagId].title}
+      </Link>
+    )
+    breadcumbTag.push(' > ')
+    breadcumbTag.push(contentTextJSX)
+    return (
+      <div className='Category'>
+        <Header>
+          <Navbar categoryObj={categoryObj} categoryIdArray={categoryIdArray} />
+        </Header>
+        <section className='page headline'>
+          <div className='center aligned ui container'>
+            <h2 className='ui header'>
+              {contentObj[categoryId][tagId].title}
+            </h2>
+          </div>
+        </section>
+        <section className='breadcumb'>
+          <div className='ui container'>
+            <Link to='/'>
+              首頁
+            </Link>
+            {breadcumbCat}
+            {breadcumbTag}
+          </div>
+        </section>
+        <section id='main'>
+          <div className='ui container'>
+            <p>
+              content page
+            </p>
+          </div>
+        </section>
+      </div>
+    )
+  }
+
   renderBreadcumbTagText({tagId, tagObj})
 
   let currentDepth = 0
-  let currentPath = []
 
   const currentDepth2FolderItemStyle = {
     0: '',
@@ -54,9 +96,6 @@ export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTre
   const renderMenu = ({tagObj, tagTreeObj}) => {
     const listJSX = Object.keys(tagTreeObj).map((tagId, tagIdIndex) => {
       currentDepth += 1
-      currentPath.push(tagId)
-      const tagObjId = currentPath.join('/')
-      const linkTo = currentPath.join('/')
 
       let subListJSX
       let itemStyle = ''
@@ -66,14 +105,13 @@ export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTre
         subListJSX = renderMenu({tagObj, tagTreeObj: tagTreeObj[tagId]})
       }
 
-      currentPath.pop()
       currentDepth -= 1
 
       return (
-        <div className={`${itemStyle} item`} key={`${linkTo}-${tagIdIndex}`}>
-          <Link to={`/${categoryId}/${linkTo}`}>
-            {tagObj[tagObjId].title}
-          </Link>
+        <div className={`${itemStyle} item`} key={`${tagId}-${tagIdIndex}`}>
+          <NavLink to={`/${categoryId}/${tagId}`}>
+            {tagObj[tagId].title}
+          </NavLink>
           {subListJSX}
         </div>
       )
@@ -96,15 +134,16 @@ export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTre
     const contentListJSX = tagContentObj[categoryId][activeTagId].map((contentId, contentIdIndex) => {
       const contentItem = contentObj[categoryId][contentId]
       const contentIcon = tagObj[categoryId][contentItem.tag_id].icon
+      const contentUrl = `/${contentItem.category_id}/${contentId}`
       return (
         <div className='item' key={`${contentId}-${contentIdIndex}`} >
           <div className='ui mini image'>
             <i className={`icon ${contentIcon}`} />
           </div>
           <div className='content'>
-            <a href={`${contentItem.current_url || ''}`} target='_blank' className='header'>
+            <Link to={contentUrl} className='header'>
               {contentItem.title}
-            </a>
+            </Link>
             <div className='meta'>
               {authorObj[contentItem.author_ids] ? authorObj[contentItem.author_ids].title : ''}
             </div>
