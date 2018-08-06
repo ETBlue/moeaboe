@@ -152,16 +152,12 @@ html, body {
   display: block;
 }
 
+.Category #sidebar .ui.menu .item>a.active {
+  font-weight: 700;
+  color: rgba(0,0,0,.95);
+}
+
 .Category #sidebar .ui.menu .level2.item>.menu {
   border-left: 1px hsla(0,0%,0%,0.1) solid;
   margin-left: 0.5rem;
-}
-
-.Category #sidebar .ui.menu .item .icon {
-  float: right;
-}
-
-.Category #content .ui.items .item>.image>.icon {
-  font-size: 1.5rem;
-  opacity: 0.5;
 }
