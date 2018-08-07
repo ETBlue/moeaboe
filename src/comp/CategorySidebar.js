@@ -37,7 +37,7 @@ export default ({tagObj, tagTreeObj, categoryId}) => {
       )
     })
 
-    const menuStyle = currentDepth === 0 ? 'ui vertical' : ''
+    const menuStyle = currentDepth === 0 ? 'ui vertical fluid' : ''
     return (
       <div className={`${menuStyle} menu`}>
         {listJSX}

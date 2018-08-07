@@ -8,6 +8,7 @@ import Header from '../comp/Header'
 import Navbar from '../comp/Navbar'
 import CategorySidebar from '../comp/CategorySidebar'
 import CategoryPolicy from '../comp/CategoryPolicy'
+import CategoryService from '../comp/CategoryService'
 
 export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTreeObj, contentObj, tagContentObj, authorObj}) => {
   if (!categoryId || !categoryObj || !categoryIdArray || !tagObj || !tagTreeObj) return null
@@ -101,7 +102,7 @@ export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTre
       if (layout === 'policy') {
         mainJSX = CategoryPolicy({categoryId, tagTreeObj, tagObj})
       } else if (layout === 'service') {
-        mainJSX = <p>layout - service</p>
+        mainJSX = CategoryService({categoryId, tagTreeObj, tagObj})
       } else if (layout === 'transition') {
         mainJSX = <p>layout - transition</p>
       }
@@ -112,10 +113,10 @@ export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTre
       headerText = categoryObj[categoryId].title
       mainJSX = (
         <div className='ui two column stackable grid'>
-          <div id='sidebar' className='six wide column'>
+          <div id='sidebar' className='five wide column'>
             {CategorySidebar({tagObj, tagTreeObj, categoryId})}
           </div>
-          <div id='content' className='ten wide column'>
+          <div id='content' className='eleven wide column'>
             {renderContentList({contentObj, tagContentObj})}
           </div>
         </div>

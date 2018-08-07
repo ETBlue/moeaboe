@@ -40,11 +40,15 @@ export default ({tagObj, tagTreeObj, categoryId}) => {
       {renderPolicySegments(subPolicyIds)}
       {renderPolicySegments(restPolicyIds)}
       <hr className='ui section divider' />
-      <section className='ui basic center aligned secondary segment' style={{height: '10rem'}}>
-        <h3 className='ui header'>
-          本局主管法規
-        </h3>
-      </section>
+      <div className='ui grid'>
+        <div className='column'>
+          <section className='ui basic center aligned secondary segment' style={{height: '10rem'}}>
+            <h3 className='ui header'>
+              本局主管法規
+            </h3>
+          </section>
+        </div>
+      </div>
     </section>
   )
 }
