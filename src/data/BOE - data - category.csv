@@ -1,7 +1,7 @@
-id,title
-about,認識能源局
-transition,能源轉型
-news,最新消息
-policy,政策與法規
-service,便民服務
-info,資訊與服務
+id,title,layout
+about,認識能源局,
+transition,能源轉型,transition
+news,最新消息,
+policy,政策與法規,policy
+service,便民服務,service
+info,資訊與服務,
