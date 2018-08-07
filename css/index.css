@@ -147,17 +147,17 @@ html, body {
   padding: 2rem 0;
 }
 
-.Category #sidebar .ui.menu .item>a {
+.Category .CategorySidebar .ui.menu .item>a {
   color: inherit;
   display: block;
 }
 
-.Category #sidebar .ui.menu .item>a.active {
+.Category .CategorySidebar .ui.menu .item>a.active {
   font-weight: 700;
   color: rgba(0,0,0,.95);
 }
 
-.Category #sidebar .ui.menu .level2.item>.menu {
+.Category .CategorySidebar .ui.menu .level2.item>.menu {
   border-left: 1px hsla(0,0%,0%,0.1) solid;
   margin-left: 0.5rem;
 }
