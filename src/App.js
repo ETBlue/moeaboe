@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import queryString from 'query-string'
 
 import {
   BrowserRouter as Router,
@@ -49,11 +50,15 @@ class App extends Component {
           <Switch>
             <Route exact path='/' render={() => Home({...this.state})} />
             <Route exact path='/search' render={() => <p>search</p>} />
-            <Route path='/:categoryId' render={({match, location}) => Category({
-              categoryId: match.params.categoryId,
-              tagId: location.pathname.replace(`/${match.params.categoryId}`, '').replace(/^\//, ''),
-              ...this.state
-            })} />
+            <Route path='/:categoryId/:tagId*' render={({match, location}) => {
+              return Category({
+                categoryId: match.params.categoryId,
+                tagId: match.params.tagId || '',
+                pathname: location.pathname,
+                search: queryString.parse(location.search),
+                ...this.state
+              })
+            }} />
           </Switch>
           <hr className='ui hidden divider' />
           {Footer({...this.state})}

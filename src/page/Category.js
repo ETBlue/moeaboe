@@ -10,7 +10,7 @@ import CategorySidebar from '../comp/CategorySidebar'
 import CategoryPolicy from '../comp/CategoryPolicy'
 import CategoryService from '../comp/CategoryService'
 
-export default ({categoryId, tagId, categoryObj, categoryIdArray, tagObj, tagTreeObj, contentObj, tagContentObj, authorObj}) => {
+export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArray, tagObj, tagTreeObj, contentObj, tagContentObj, authorObj}) => {
   if (!categoryId || !categoryObj || !categoryIdArray || !tagObj || !tagTreeObj) return null
 
   let breadcumbCat = []
