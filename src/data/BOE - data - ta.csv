@@ -1,13 +1,13 @@
-parent_id,endpoint_id,id,title
-,local_gov,,地方政府
-,corporation,,企業
-corporation,申辦業務廠商,corporation/申辦業務廠商,申辦業務廠商
-corporation,能源產業廠商,corporation/能源產業廠商,能源產業廠商
-,school,,學校
-,specialist,,專業技術人員
-,citizen,,一般民眾
-citizen,偏遠及離島地區,citizen/偏遠及離島地區,偏遠及離島地區
-citizen,原住民族,citizen/原住民族,原住民族
-citizen,社區,citizen/社區,社區
-,ngo,,NGO
-,media,,媒體
+parent_id,endpoint_id,id,title,,note
+,local_gov,,地方政府,,
+,corporation,,企業,,
+corporation,firm_business_bid,corporation/firm_business_bid,申辦業務廠商,,韋廷更新；待double check
+corporation,firm_energy_industry,corporation/firm_energy_industry,能源產業廠商,,
+,school,,學校,,
+,specialist,,專業技術人員,,
+,citizen,,一般民眾,,
+citizen,rural_offshore,citizen/rural_offshore,偏遠及離島地區,,
+citizen,indigenous,citizen/indigenous,原住民族,,
+citizen,community,citizen/community,社區,,
+,ngo,,NGO,,
+,media,,媒體,,
