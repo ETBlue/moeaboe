@@ -25,6 +25,9 @@ export default ({tagCsvArray, categoryObj, categoryIdArray}) => {
       tagObjItem[title] = lineArray[titleIndex]
     })
 
+    if (tagObjItem.category_id === 'disabled') {
+      return
+    }
     const tagObjId = tagObjItem.id.length > 0 ? tagObjItem.id : tagObjItem.endpoint_id
     tagObj[tagObjItem.category_id][tagObjId] = tagObjItem
 

@@ -31,6 +31,10 @@ export default ({contentCsvArray, tagObj, categoryIdArray}) => {
       contentObjItem[title] = lineArray[titleIndex]
     })
 
+    if (contentObjItem.category_id === 'disabled') {
+      return
+    }
+
     let contentObjId = contentObjItem.id.length > 0 ? contentObjItem.id : contentObjItem.endpoint_id
     contentObj[contentObjItem.category_id][`${contentObjItem.tag_id}/${contentObjId}`] = contentObjItem
 

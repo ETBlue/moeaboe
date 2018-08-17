@@ -22,6 +22,6 @@
     "csv-loader": "^3.0.2",
     "gh-pages": "^1.2.0",
     "papaparse": "^4.5.1",
-    "query-string": "^6.1.0"
+    "query-string": "~5.1.1"
   }
 }
