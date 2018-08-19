@@ -12,23 +12,16 @@ export default ({tagObj, tagTreeObj, categoryId}) => {
       gridStyle = 'three'
     }
     const serviceSegmentsJSX = serviceIds.map((serviceId, serviceIdIndex) => {
-      const serviceChildrenJSX = Object.keys(tagTreeObj[categoryId][serviceId]).map((serviceChildrenId, serviceChildrenIdIndex) => {
-        const serviceChildrenItem = tagObj[categoryId][serviceChildrenId]
-        return (
-          <Link to={`${categoryId}/${serviceChildrenId}`} className='item'>
-            {serviceChildrenItem.title}
-          </Link>
-        )
-      })
       const serviceItem = tagObj[categoryId][serviceId]
       return (
         <div key={`${serviceId}-${serviceIdIndex}`} className='column'>
-          <section className='ui basic secondary segment' style={{height: '100%'}} >
-            <h3 className='ui center aligned dividing header'>
+          <section className='ui fluid card'>
+            <div className='image' style={{height: '10rem'}} >
+            </div>
+            <div className='content'>
+            <Link to={`/service/${serviceId}`} className='center aligned header'>
               {serviceItem.title}
-            </h3>
-            <div className='ui relaxed list'>
-              {serviceChildrenJSX}
+            </Link>
             </div>
           </section>
         </div>
