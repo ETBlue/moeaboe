@@ -69,7 +69,7 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
 
       const contentListJSX = tagContentObj[categoryId][activeTagId].map((contentId, contentIdIndex) => {
         const contentItem = contentObj[categoryId][contentId]
-        const contentIcon = tagObj[categoryId][contentItem.tag_id].icon
+        const contentIcon = contentItem.icon || tagObj[categoryId][contentItem.tag_id].icon
         const contentUrl = `/${contentItem.category_id}/${contentId}`
         return (
           <div className='item' key={`${contentId}-${contentIdIndex}`} >
@@ -82,6 +82,7 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
               </Link>
               <div className='meta'>
                 {authorObj[contentItem.author_ids] ? authorObj[contentItem.author_ids].title : ''}
+                {contentItem.updated ? `於 ${contentItem.updated} 更新` : ''}
               </div>
             </div>
           </div>
@@ -106,9 +107,7 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
       } else if (layout === 'transition') {
         mainJSX = <p>layout - transition</p>
       }
-    } else if (tagId.length > 0 && tagObj[categoryId][tagId].layout.length > 0) {
-      headerText = tagObj[categoryId][tagId].title
-      mainJSX = <p>layout - tag</p>
+
     } else {
       headerText = categoryObj[categoryId].title
       mainJSX = (

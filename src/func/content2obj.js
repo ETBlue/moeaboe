@@ -31,7 +31,7 @@ export default ({contentCsvArray, tagObj, categoryIdArray}) => {
       contentObjItem[title] = lineArray[titleIndex]
     })
 
-    if (contentObjItem.category_id === 'disabled') {
+    if (!contentObjItem.category_id || !categoryIdArray.includes(contentObjItem.category_id)) {
       return
     }
 

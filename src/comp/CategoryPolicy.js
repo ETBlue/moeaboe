@@ -5,12 +5,6 @@ import {
 
 export default ({tagObj, tagTreeObj, categoryId}) => {
   const renderPolicySegments = (policyIds) => {
-    let gridStyle
-    if (policyIds.length === 1) {
-      gridStyle = ''
-    } else {
-      gridStyle = 'three column stackable'
-    }
     const policySegmentsJSX = policyIds.map((policyId, policyIdIndex) => {
       const policyItem = tagObj[categoryId][policyId]
       return (
@@ -24,16 +18,15 @@ export default ({tagObj, tagTreeObj, categoryId}) => {
       )
     })
     return (
-      <div className={`${gridStyle} ui grid`}>
+      <div className='three column stackable ui grid'>
         {policySegmentsJSX}
       </div>
     )
   }
 
-  const mainPolicyIds = Object.keys(tagTreeObj[categoryId].plan).slice(0, 1)
-  const subPolicyIds = Object.keys(tagTreeObj[categoryId].plan).slice(1, 4)
-  const restPolicyIds = Object.keys(tagTreeObj[categoryId].plan).slice(4)
-
+  const mainPolicyIds = Object.keys(tagTreeObj[categoryId].plan).slice(0, 3)
+  const subPolicyIds = Object.keys(tagTreeObj[categoryId].plan).slice(3, 6)
+  const restPolicyIds = Object.keys(tagTreeObj[categoryId].plan).slice(6, 9)
   return (
     <section className='CategoryPolicy'>
       {renderPolicySegments(mainPolicyIds)}
