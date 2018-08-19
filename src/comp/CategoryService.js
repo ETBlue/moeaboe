@@ -19,9 +19,9 @@ export default ({tagObj, tagTreeObj, categoryId}) => {
             <div className='image' style={{height: '10rem'}} >
             </div>
             <div className='content'>
-            <Link to={`/service/${serviceId}`} className='center aligned header'>
-              {serviceItem.title}
-            </Link>
+              <Link to={`/service/${serviceId}`} className='center aligned header'>
+                {serviceItem.title}
+              </Link>
             </div>
           </section>
         </div>

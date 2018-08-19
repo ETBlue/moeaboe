@@ -9,9 +9,14 @@ import Navbar from '../comp/Navbar'
 import CategorySidebar from '../comp/CategorySidebar'
 import CategoryPolicy from '../comp/CategoryPolicy'
 import CategoryService from '../comp/CategoryService'
+import CategoryTransition from '../comp/CategoryTransition'
+import renderMenu from '../func/renderMenu'
 
 export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArray, tagObj, tagTreeObj, contentObj, tagContentObj, authorObj}) => {
   if (!categoryId || !categoryObj || !categoryIdArray || !tagObj || !tagTreeObj) return null
+
+  console.log(pathname)
+  console.log(search)
 
   let breadcumbCat = []
   let categoryTextJSX = null
@@ -45,6 +50,7 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
   let headerText
   let mainJSX
 
+  // destination page
   if (contentObj[categoryId][tagId]) {
     renderBreadcumbTagText({tagId: contentObj[categoryId][tagId].tag_id, tagObj})
     const contentTextJSX = (
@@ -55,14 +61,24 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
     breadcumbTag.push(' > ')
     breadcumbTag.push(contentTextJSX)
 
-    headerText = contentObj[categoryId][tagId].title
+    const headerIcon = contentObj[categoryId][tagId].icon || tagObj[categoryId][contentObj[categoryId][tagId].tag_id].icon
+    headerText = [
+      <i className={`${headerIcon} icon`} style={{opacity: '0.5'}} />,
+      contentObj[categoryId][tagId].title
+    ]
     mainJSX = (
       <p>
-        content page
+        <a href={contentObj[categoryId][tagId].current_url || ''} target='_blank'>
+          {`《${contentObj[categoryId][tagId].title}》的原始網址 `}
+          <i className='external alternate icon' />
+        </a>
       </p>
     )
+
+  // navigation page
   } else {
     renderBreadcumbTagText({tagId, tagObj})
+    headerText = categoryObj[categoryId].title
     const renderContentList = ({contentObj, tagContentObj}) => {
       let activeTagId = tagId || 'all'
       if (!tagContentObj || !tagContentObj[categoryId][activeTagId]) return null
@@ -71,6 +87,17 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
         const contentItem = contentObj[categoryId][contentId]
         const contentIcon = contentItem.icon || tagObj[categoryId][contentItem.tag_id].icon
         const contentUrl = `/${contentItem.category_id}/${contentId}`
+        let contentAction = null
+        if (contentItem.layout_id === 'external_site') {
+          contentAction = (
+            <div className='extra'>
+              <a href={contentItem.current_url} target='_blank'>
+                直接前往外網連結
+                <i className='icon right chevron' />
+              </a>
+            </div>
+          )
+        }
         return (
           <div className='item' key={`${contentId}-${contentIdIndex}`} >
             <div className='ui mini image'>
@@ -84,6 +111,7 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
                 {authorObj[contentItem.author_ids] ? authorObj[contentItem.author_ids].title : ''}
                 {contentItem.updated ? `於 ${contentItem.updated} 更新` : ''}
               </div>
+              {contentAction}
             </div>
           </div>
         )
@@ -96,8 +124,8 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
       )
     }
 
+    // level one pages with layout setting
     if (tagId.length === 0 && categoryObj[categoryId].layout.length > 0) {
-      headerText = categoryObj[categoryId].title
       const layout = categoryObj[categoryId].layout
 
       if (layout === 'policy') {
@@ -105,17 +133,53 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
       } else if (layout === 'service') {
         mainJSX = CategoryService({categoryId, tagTreeObj, tagObj})
       } else if (layout === 'transition') {
-        mainJSX = <p>layout - transition</p>
+        mainJSX = <CategoryTransition />
       }
 
+    // level two service pages
+    } else if (tagId.length > 0 && categoryId === 'service') {
+      headerText = tagObj[categoryId][tagId].title
+
+      if (!tagId.includes('/')) {
+        const contentListJSX = Object.keys(tagTreeObj[categoryId][tagId]).map((serviceId, serviceIdIndex) => {
+          return (
+            <div className='column'>
+              <h2 className='ui center aligned medium icon header'>
+                <i className='circular image icon' style={{fontSize: '5rem'}} />
+                {tagObj[categoryId][serviceId].title}
+              </h2>
+            </div>
+          )
+        })
+        mainJSX = (
+          <div className='ui three column stackable grid'>
+            {contentListJSX}
+          </div>
+        )
+      } else {
+        mainJSX = (
+          <div className='ui two column stackable grid'>
+            <div id='sidebar' className='five wide column'>
+              {renderMenu({tagObj: tagObj[categoryId], tagTreeObj: tagTreeObj[categoryId][tagId], categoryId, currentDepth: 0, currentDepth2FolderItemStyle: {}})}
+            </div>
+            <div id='content' className='eleven wide column'>
+              {renderContentList({contentObj, tagContentObj})}
+            </div>
+          </div>
+        )
+      }
+
+    // others
     } else {
-      headerText = categoryObj[categoryId].title
       mainJSX = (
         <div className='ui two column stackable grid'>
           <div id='sidebar' className='five wide column'>
             {CategorySidebar({tagObj, tagTreeObj, categoryId})}
           </div>
           <div id='content' className='eleven wide column'>
+            {
+            //renderFilter({})
+            }
             {renderContentList({contentObj, tagContentObj})}
           </div>
         </div>

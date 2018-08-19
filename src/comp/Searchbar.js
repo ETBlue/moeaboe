@@ -5,11 +5,11 @@ import {
 
 export default () => {
   const NEEDS = [
-    '能源時事',
-    '法規與公民參與',
-    '本局報告與資料',
-    '知識與教材',
-    '優惠方案'
+    '類別 1',
+    '類別 2',
+    '類別 3',
+    '類別 4',
+    '類別 5'
   ]
   const searchOptionJSX = NEEDS.map((item, itemIndex) => (
     <div key={`${item}-${itemIndex}`} className='item'>
@@ -36,12 +36,12 @@ export default () => {
         <input type='text' placeholder='搜尋關鍵字...' />
         <div className='ui simple dropdown button'>
           <div className='text'>
-            所有類型
+            所有類別
           </div>
           <i className='dropdown icon' />
           <div className='menu'>
             <div className='item'>
-              所有類型
+              所有類別
             </div>
             {searchOptionJSX}
           </div>

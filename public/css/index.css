@@ -143,6 +143,17 @@ html, body {
   align-items: center;
 }
 
+.Home .section,
+.CategoryTransition .section {
+  height: 15rem;
+  padding: 2rem 0;
+}
+
+.Home .section:nth-child(even),
+.CategoryTransition .section:nth-child(odd) {
+  background-color: hsla(0,0%,0%,0.05);
+}
+
 .Category #main {
   padding: 2rem 0;
 }
@@ -171,6 +182,6 @@ html, body {
 }
 
 .Category #content .ui.items .item>.image>.icon {
-  font-size: 1.5rem;
+  font-size: 2rem;
   opacity: 0.5;
 }

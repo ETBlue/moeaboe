@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  NavLink
-} from 'react-router-dom'
+import renderMenu from '../func/renderMenu'
 
 export default ({tagObj, tagTreeObj, categoryId}) => {
   let currentDepth = 0
@@ -13,39 +11,7 @@ export default ({tagObj, tagTreeObj, categoryId}) => {
     3: 'level3'
   }
 
-  const renderMenu = ({tagObj, tagTreeObj, categoryId}) => {
-    const listJSX = Object.keys(tagTreeObj).map((tagId, tagIdIndex) => {
-      currentDepth += 1
-
-      let subListJSX
-      let itemStyle = ''
-
-      if (Object.keys(tagTreeObj[tagId]).length > 0) {
-        itemStyle += currentDepth2FolderItemStyle[currentDepth]
-        subListJSX = renderMenu({tagObj, tagTreeObj: tagTreeObj[tagId], categoryId})
-      }
-
-      currentDepth -= 1
-
-      return (
-        <div className={`${itemStyle} item`} key={`${tagId}-${tagIdIndex}`}>
-          <NavLink to={`/${categoryId}/${tagId}`}>
-            {tagObj[tagId].title}
-          </NavLink>
-          {subListJSX}
-        </div>
-      )
-    })
-
-    const menuStyle = currentDepth === 0 ? 'ui vertical fluid' : ''
-    return (
-      <div className={`${menuStyle} menu`}>
-        {listJSX}
-      </div>
-    )
-  }
-
-  const sidebarJSX = renderMenu({tagObj: tagObj[categoryId], tagTreeObj: tagTreeObj[categoryId], categoryId})
+  const sidebarJSX = renderMenu({tagObj: tagObj[categoryId], tagTreeObj: tagTreeObj[categoryId], categoryId, currentDepth, currentDepth2FolderItemStyle})
 
   return (
     <nav className='CategorySidebar'>
