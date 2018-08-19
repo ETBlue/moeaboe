@@ -147,6 +147,10 @@ html, body {
   padding: 2rem 0;
 }
 
+.Category .CategorySidebar .ui.menu .item>.menu {
+  display: none;
+}
+
 .Category .CategorySidebar .ui.menu .item>a {
   color: inherit;
   display: block;
@@ -155,6 +159,10 @@ html, body {
 .Category .CategorySidebar .ui.menu .item>a.active {
   font-weight: 700;
   color: rgba(0,0,0,.95);
+}
+
+.Category .CategorySidebar .ui.menu .item>a.active~.menu {
+  display: block;
 }
 
 .Category .CategorySidebar .ui.menu .level2.item>.menu {
