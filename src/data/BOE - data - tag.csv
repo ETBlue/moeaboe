@@ -121,14 +121,15 @@ no,category_id,parent_id,endpoint_id,id,title,icon,layout,tab_filter_id,text_fil
 117,info,statistic,query,statistic/query,能源統計資料查詢系統,chart bar,info,energy,,,,,,
 119,info,statistic,taipower,statistic/taipower,台電資訊揭露(超連結),chart bar,info,energy,,,,,,
 120,info,statistic,county,statistic/county,縣市能源資訊,chart bar,info,energy,,,,,,
+,info,,opendata,,開放資料集,code,info,energy,,,,,,
 123,info,,knowledge,,能源知識補給站,book,info,energy,,,,,,
-124,info,knowledge,term,knowledge/term,雙語詞彙-能源名詞,book,info,energy,,,,,,
+124,info,knowledge,term,knowledge/term,雙語詞彙-能源名詞,book,info,energy,,,,,,https://www.moeaboe.gov.tw/ECW/populace/content/ContentLink.aspx?menu_id=426
 125,info,knowledge,policy,knowledge/policy,能源政策,book,info,energy,,,,,,
 126,info,knowledge,oil_gas,knowledge/oil_gas,石油與天然氣,book,info,energy,,,,,,
 ,info,knowledge/oil_gas,gas_safety,knowledge/oil_gas/gas_safety,瓦斯使用安全,book,info,energy,,,,,,
 127,info,knowledge,electricity,knowledge/electricity,電力,book,info,energy,,,,,,
 ,info,knowledge/electricity,safety,knowledge/electricity/safety,用電安全,book,info,energy,,,,,,
-128,info,knowledge,renewables,knowledge/renewables,再生能源,book,info,energy,,,,,,
+128,info,knowledge,renewables,knowledge/renewables,再生能源,book,info,energy,,,,,,https://www.moeaboe.gov.tw/ECW/populace/content/SubMenu.aspx?menu_id=106
 129,info,knowledge,conservation,knowledge/conservation,節約能源,book,info,energy,,,,,,
 ,info,knowledge,nuclear,knowledge/nuclear,核能,book,info,energy,,,,,,
 130,info,knowledge,ghg,knowledge/ghg,溫室氣體,book,info,energy,,,,,,
