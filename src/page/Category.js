@@ -75,7 +75,7 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
       </p>
     )
 
-  // navigation page
+  // navigation pages
   } else {
     renderBreadcumbTagText({tagId, tagObj})
     headerText = categoryObj[categoryId].title
@@ -124,17 +124,17 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
       )
     }
 
-    // level one pages with layout setting
-    if (tagId.length === 0 && categoryObj[categoryId].layout.length > 0) {
-      const layout = categoryObj[categoryId].layout
+    const categoryLayout = categoryObj[categoryId].layout || ''
 
-      if (layout === 'policy') {
-        mainJSX = CategoryPolicy({categoryId, tagTreeObj, tagObj})
-      } else if (layout === 'service') {
-        mainJSX = CategoryService({categoryId, tagTreeObj, tagObj})
-      } else if (layout === 'transition') {
-        mainJSX = <CategoryTransition />
-      }
+    let filterJSX = null
+
+    // level one policy page
+    if (tagId.length === 0 && categoryLayout === 'policy') {
+      mainJSX = CategoryPolicy({categoryId, tagTreeObj, tagObj})
+
+    // level one service page
+    } else if (tagId.length === 0 && categoryLayout === 'service') {
+      mainJSX = CategoryService({categoryId, tagTreeObj, tagObj})
 
     // level two service pages
     } else if (tagId.length > 0 && categoryId === 'service') {
@@ -169,17 +169,69 @@ export default ({categoryId, tagId, pathname, search, categoryObj, categoryIdArr
         )
       }
 
+    // level one transition page
+    } else if (tagId.length === 0 && categoryLayout === 'transition') {
+      mainJSX = <CategoryTransition />
+
     // others
     } else {
+      // setup filters for info
+      if (categoryLayout === 'info') {
+        const dropdownFilterDataA = [
+          '所有格式',
+          'pdf',
+          'docx / odt',
+          'xlsx / odt',
+          'zip'
+        ]
+        const dropdownFilterDataAJSX = dropdownFilterDataA.map((filterItem) => (
+          <div className='item'>
+            {filterItem}
+          </div>
+        ))
+        const dropdownFilterDataB = [
+          '新到舊',
+          '熱門的優先'
+        ]
+        const dropdownFilterDataBJSX = dropdownFilterDataB.map((filterItem) => (
+          <div className='item'>
+            {filterItem}
+          </div>
+        ))
+        filterJSX = (
+          <div className='ui menu'>
+            <div className='ui simple dropdown item'>
+              {dropdownFilterDataA[0]}
+              <i className='icon dropdown' />
+              <div className='menu'>
+                {dropdownFilterDataAJSX}
+              </div>
+            </div>
+            <div className='ui simple dropdown item'>
+              {dropdownFilterDataB[0]}
+              <i className='icon dropdown' />
+              <div className='menu'>
+                {dropdownFilterDataBJSX}
+              </div>
+            </div>
+            <div className='right menu'>
+              <div className='ui right aligned category search item'>
+                <div className='ui transparent icon input'>
+                  <input type='text' placeholder='搜尋...' />
+                  <i className='search icon' />
+                </div>
+              </div>
+            </div>
+          </div>
+        )
+      }
       mainJSX = (
         <div className='ui two column stackable grid'>
           <div id='sidebar' className='five wide column'>
             {CategorySidebar({tagObj, tagTreeObj, categoryId})}
           </div>
           <div id='content' className='eleven wide column'>
-            {
-            //renderFilter({})
-            }
+            {filterJSX}
             {renderContentList({contentObj, tagContentObj})}
           </div>
         </div>
